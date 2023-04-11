@@ -25,7 +25,7 @@
     <script>
         let ALPHABET = 'ABCDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZ';
       function encrypt() {
-        let input = document.getElementById("input").value.toUpperCase();
+        let input = document.getElementById("input").textContent;
         let output = '';
         for (let i = 0; i < input.length; i++) {
           let c = input[i];
