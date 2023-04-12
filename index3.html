@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Kelime Dönüştürücü</title>
+  </head>
+  <body>
+    <form onsubmit="return false;">
+      <label>
+        Kelime:
+        <input type="text" id="word" required>
+      </label>
+      <button onclick="convert()">Dönüştür</button>
+    </form>
+    <p id="result"></p>
+    
+    <script>
+      var list1 = "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ";
+      var list2 = "DEFGĞHIİJKLMNOÖPRSŞTUÜVYZABCÇ";
+      
+      function convert() {
+        var word = document.getElementById("word").value.toUpperCase();
+        var result = "";
+        for (var i = 0; i < word.length; i++) {
+          var index = list1.indexOf(word[i]);
+          if (index >= 0) {
+            result += list2[index];
+          } else {
+            result += word[i];
+          }
+        }
+        document.getElementById("result").textContent = result;
+      }
+    </script>
+  </body>
+</html>
