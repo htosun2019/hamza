@@ -23,11 +23,11 @@
         var result = "";
         for (var i = 0; i < word.length; i++) {
           var index = list1.indexOf(word[i]);
-          if (index >= 0) {
+          //if (index >= 0) {
             result += list2[index];
-          } else {
-            result += word[i];
-          }
+          ///} else {
+        //    result += word[i];
+          //}
         }
         document.getElementById("result").textContent = result;
       }
