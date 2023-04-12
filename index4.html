@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Kelime Dönüştürücü</title>
+  </head>
+  <body>
+    <form onsubmit="return false;">
+      <label>
+        Kelime:
+        <input type="text" id="word" required>
+      </label>
+      <button onclick="convert()">Dönüştür</button>
+    </form>
+    <p id="result"></p>
+    
+    <script>
+      var list1 = "abcçdefgğhıijklmnoöprsştuüvyz";
+      var list2 = "defgğhıijklmnoöprsştuüvyzabcç";
+      
+      function convert() {
+        var word = document.getElementById("word").value;
+        var result = "";
+        var map = new Map();
+        for (var i = 0; i < list1.length; i++) {
+          map.set(list1[i], list2[i]);
+        }
+        for (var j = 0; j < word.length; j++) {
+          result += map.get(word[j]) || word[j];
+        }
+        document.getElementById("result").innerHTML = result;
+      }
+    </script>
+  </body>
+</html>
+Burada, dönüşümü yapmak için Map() yöntemi kullanılmıştır ve her karakter için map.get() yöntemi kullanılmıştır. map.get() yöntemi, karakterin dönüştürülmüş karşılığı varsa,
