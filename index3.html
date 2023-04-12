@@ -15,21 +15,16 @@
     <p id="result"></p>
     
     <script>
-      var list1 = "ABCÇDEFGĞHIİJKLMNOÖPRSŞTUÜVYZ";
-      var list2 = "DEFGĞHIİJKLMNOÖPRSŞTUÜVYZABCÇ";
-      
+      var list1 = "abcçdefgğhıijklmnoöprsştuüvyz";
+      var list2 = "defgğhıijklmnoöprsştuüvyzabcç";
       function convert() {
-        var word = document.getElementById("word").value.toUpperCase();
+        var word = document.getElementById("word").value;
         var result = "";
         for (var i = 0; i < word.length; i++) {
           var index = list1.indexOf(word[i]);
-          //if (index >= 0) {
-            result += list2[index];
-          ///} else {
-        //    result += word[i];
-          //}
-        }
-        document.getElementById("result").textContent = result;
+           result += list2[index];
+          }
+        document.getElementById("result").innerHTML = result;
       }
     </script>
   </body>
