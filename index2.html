@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +12,7 @@
 <body>
     <div style="width:400px; margin-top: 50px; margin-left: 100px;">
         <table style="border-width: 2px; border-color: blue;">
-            <tr><td><label class="form-label">Şifrelenecek Metni Girin:</label>
+            <tr><td ><label class="form-label">Şifrelenecek Metni Girin:</label>
                 <input id="input" class="form-control">
                 <div id="passwordHelpBlock" class="form-text"></td></tr>
             <tr><td> <button onclick="encrypt()" type="button" class="btn btn-danger" style="width: 400px">Şifrele</button></td></tr>
@@ -25,7 +26,7 @@
     <script>
         let ALPHABET = 'ABCDEFGĞHIİJKLMNOÖPQRSŞTUÜVWXYZ';
       function encrypt() {
-        let input = document.getElementById("input").textContent;
+        let input = document.getElementById("input").value.toUpperCase();
         let output = '';
         for (let i = 0; i < input.length; i++) {
           let c = input[i];
